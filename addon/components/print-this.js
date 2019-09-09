@@ -20,10 +20,10 @@ export default Ember.Component.extend({
       this._print();
     }
   },
-  
+
   _print() {
     const printSelector = this.get('printSelector') || '';
 
-    this.get('printThis').print(printSelector, this.get('options') || {}, this.$.bind(this));
+    this.get('printThis').print(printSelector, this.get('options') || {}, this.element.addEventListener.bind(this));
   },
 });
